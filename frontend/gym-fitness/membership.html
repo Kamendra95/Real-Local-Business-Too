@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership | PowerFit Gym</title>
+    <link rel="stylesheet" href="../shared/css/common.css">
+    <link rel="stylesheet" href="../shared/css/responsive.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">💪 PowerFit Gym</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="classes.html">Classes</a></li>
+                <li><a href="membership.html" class="active">Membership</a></li>
+                <li><a href="trainers.html">Trainers</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">☰</div>
+        </div>
+    </nav>
+
+    <section class="membership-header">
+        <div class="container">
+            <h1>Membership Plans</h1>
+            <p>Choose the plan that fits your fitness goals</p>
+        </div>
+    </section>
+
+    <section class="pricing-section">
+        <div class="container">
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Basic</h3>
+                    <div class="price">$29<span>/month</span></div>
+                    <ul>
+                        <li>✓ Gym Access</li>
+                        <li>✓ Locker Room Access</li>
+                        <li>✗ Group Classes</li>
+                        <li>✗ Personal Training</li>
+                        <li>✗ 24/7 Access</li>
+                        <li>✗ Guest Passes</li>
+                    </ul>
+                    <button class="btn btn-secondary select-plan" data-plan="Basic">Select Plan</button>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="popular-tag">Most Popular</div>
+                    <h3>Pro</h3>
+                    <div class="price">$59<span>/month</span></div>
+                    <ul>
+                        <li>✓ Gym Access</li>
+                        <li>✓ Locker Room Access</li>
+                        <li>✓ All Group Classes</li>
+                        <li>✓ 1 Personal Training Session</li>
+                        <li>✓ 24/7 Access</li>
+                        <li>✗ Guest Passes</li>
+                    </ul>
+                    <button class="btn btn-primary select-plan" data-plan="Pro">Select Plan</button>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Premium</h3>
+                    <div class="price">$99<span>/month</span></div>
+                    <ul>
+                        <li>✓ Gym Access</li>
+                        <li>✓ Locker Room Access</li>
+                        <li>✓ All Group Classes</li>
+                        <li>✓ Unlimited Personal Training</li>
+                        <li>✓ 24/7 Access</li>
+                        <li>✓ 4 Guest Passes/month</li>
+                    </ul>
+                    <button class="btn btn-secondary select-plan" data-plan="Premium">Select Plan</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="membership-faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Can I cancel my membership anytime?</h3>
+                    <p>Yes, you can cancel your membership with 30 days notice. No hidden fees.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is there an enrollment fee?</h3>
+                    <p>No enrollment fee for annual memberships. Monthly memberships have a $50 one-time fee.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I bring a friend?</h3>
+                    <p>Premium members get 4 guest passes per month. Other members can purchase day passes for $15.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What amenities are included?</h3>
+                    <p>All members get access to locker rooms, showers, and free parking.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PowerFit Gym</h3>
+                    <p>Your fitness journey starts here</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Hours</h3>
+                    <p>24/7 - Open All Year</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>📍 456 Fitness Ave, NYC</p>
+                    <p>📞 (555) 987-6543</p>
+                    <p>✉️ info@powerfit.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 PowerFit Gym. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../shared/js/utils.js"></script>
+    <script>
+        // Select Plan Button - Cash on Arrival
+        document.querySelectorAll('.select-plan').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const plan = btn.dataset.plan;
+                
+                // Get customer details
+                const name = prompt('Enter your full name:');
+                if (!name) return;
+                
+                const email = prompt('Enter your email address:');
+                if (!email) return;
+                
+                const phone = prompt('Enter your phone number:');
+                if (!phone) return;
+                
+                // Confirm booking
+                const confirmMsg = confirm(`Confirm ${plan} plan for ${name}?\n\nPlan: ${plan}\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nPayment: Cash on arrival at gym`);
+                
+                if (!confirmMsg) return;
+                
+                // Save booking data
+                const bookingData = {
+                    businessType: 'gym',
+                    name: name,
+                    email: email,
+                    phone: phone,
+                    service: `${plan} Membership`,
+                    date: new Date().toISOString().split('T')[0],
+                    time: 'Flexible',
+                    specialRequests: `${plan} plan selected - Payment: Cash on arrival at gym counter`
+                };
+                
+                showLoader();
+                
+                fetch('http://localhost:5000/api/bookings', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(bookingData)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    hideLoader();
+                    if (data.success) {
+                        showAlert(`✅ ${plan} plan booking confirmed!\n\n📌 Payment: Cash on arrival at gym\n📌 Our team will contact you within 24 hours.\n📌 Please visit gym with ID proof.`, 'success');
+                    } else {
+                        showAlert('❌ Booking failed. Please try again.', 'error');
+                    }
+                })
+                .catch(err => {
+                    hideLoader();
+                    showAlert('❌ Network error. Please try again.', 'error');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

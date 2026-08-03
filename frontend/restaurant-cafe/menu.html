@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | The Gourmet Bistro</title>
+    <link rel="stylesheet" href="../shared/css/common.css">
+    <link rel="stylesheet" href="../shared/css/responsive.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">🍽️ The Gourmet Bistro</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html" class="active">Menu</a></li>
+                <li><a href="reservation.html">Reservations</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="menu-header">
+        <div class="container">
+            <h1>Our Menu</h1>
+            <p>Carefully crafted dishes using the finest ingredients</p>
+        </div>
+    </section>
+
+    <section class="menu-categories">
+        <div class="container">
+            <div class="category-tabs">
+                <button class="tab-btn active" data-category="appetizers">Appetizers</button>
+                <button class="tab-btn" data-category="mains">Main Courses</button>
+                <button class="tab-btn" data-category="desserts">Desserts</button>
+                <button class="tab-btn" data-category="beverages">Beverages</button>
+            </div>
+
+            <div id="appetizers" class="menu-category active">
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3>Bruschetta <span class="price">$8.99</span></h3>
+                            <p>Toasted bread with fresh tomatoes, basil, and garlic</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3>Garlic Shrimp <span class="price">$12.99</span></h3>
+                            <p>Sautéed shrimp in garlic butter sauce with lemon</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3>Caprese Salad <span class="price">$9.99</span></h3>
+                            <p>Fresh mozzarella, tomatoes, basil, balsamic glaze</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3>Calamari Fritti <span class="price">$11.99</span></h3>
+                            <p>Crispy fried calamari with marinara sauce</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="mains" class="menu-category">
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3>Grilled Salmon <span class="price">$24.99</span></h3>
+                            <p>With lemon butter sauce, served with seasonal vegetables</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3>Beef Tenderloin <span class="price">$32.99</span></h3>
+                            <p>8oz tenderloin with red wine reduction, mashed potatoes</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3>Mushroom Risotto <span class="price">$18.99</span></h3>
+                            <p>Creamy arborio rice with wild mushrooms, parmesan</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3>Chicken Marsala <span class="price">$21.99</span></h3>
+                            <p>Pan-seared chicken with mushrooms in marsala wine sauce</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3>Lobster Ravioli <span class="price">$28.99</span></h3>
+                            <p>Homemade ravioli filled with lobster, creamy tomato sauce</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="desserts" class="menu-category">
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3>Tiramisu <span class="price">$8.99</span></h3>
+                            <p>Classic Italian dessert with espresso and mascarpone</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3>Crème Brûlée <span class="price">$7.99</span></h3>
+                            <p>Rich vanilla custard with caramelized sugar top</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3>Chocolate Lava Cake <span class="price">$9.99</span></h3>
+                            <p>Warm chocolate cake with molten center, vanilla ice cream</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3>Cheesecake <span class="price">$7.99</span></h3>
+                            <p>New York style cheesecake with berry compote</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="beverages" class="menu-category">
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3>House Wine <span class="price">$8.00</span></h3>
+                            <p>Red or white, glass</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3>Craft Cocktails <span class="price">$12.00</span></h3>
+                            <p>Signature cocktails by our mixologist</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3>Fresh Coffee <span class="price">$3.50</span></h3>
+                            <p>Freshly brewed coffee or espresso</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3>Imported Beer <span class="price">$6.00</span></h3>
+                            <p>Selection of international beers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 The Gourmet Bistro. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        const tabs = document.querySelectorAll('.tab-btn');
+        const categories = document.querySelectorAll('.menu-category');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const category = tab.dataset.category;
+                
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                categories.forEach(cat => cat.classList.remove('active'));
+                document.getElementById(category).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Glamour Studio</title>
+    <link rel="stylesheet" href="../shared/css/common.css">
+    <link rel="stylesheet" href="../shared/css/responsive.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">💇 Glamour Studio</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="appointment.html">Appointments</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">☰</div>
+        </div>
+    </nav>
+
+    <section class="gallery-header">
+        <div class="container">
+            <h1>Our Gallery</h1>
+            <p>See our work and experience the Glamour Studio difference</p>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-categories">
+                <button class="gallery-btn active" data-category="all">All</button>
+                <button class="gallery-btn" data-category="hair">Hair</button>
+                <button class="gallery-btn" data-category="spa">Spa</button>
+                <button class="gallery-btn" data-category="nails">Nails</button>
+                <button class="gallery-btn" data-category="makeup">Makeup</button>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="hair">
+                    <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=400" alt="Hair Styling">
+                    <div class="gallery-overlay">
+                        <h3>Hair Styling</h3>
+                        <p>Elegant updo for special occasions</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="hair">
+                    <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=400" alt="Hair Color">
+                    <div class="gallery-overlay">
+                        <h3>Hair Color</h3>
+                        <p>Beautiful balayage transformation</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="spa">
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400" alt="Massage">
+                    <div class="gallery-overlay">
+                        <h3>Relaxing Massage</h3>
+                        <p>Hot stone therapy session</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="spa">
+                    <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=400" alt="Facial">
+                    <div class="gallery-overlay">
+                        <h3>Luxury Facial</h3>
+                        <p>Customized skin treatment</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="nails">
+                    <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400" alt="Nails">
+                    <div class="gallery-overlay">
+                        <h3>Nail Art</h3>
+                        <p>Creative nail designs</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="nails">
+                    <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=400" alt="Pedicure">
+                    <div class="gallery-overlay">
+                        <h3>Spa Pedicure</h3>
+                        <p>Complete foot pampering</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="makeup">
+                    <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=400" alt="Makeup">
+                    <div class="gallery-overlay">
+                        <h3>Bridal Makeup</h3>
+                        <p>Perfect wedding day look</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="makeup">
+                    <img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=400" alt="Evening Makeup">
+                    <div class="gallery-overlay">
+                        <h3>Evening Glam</h3>
+                        <p>Party ready makeup</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Glamour Studio</h3>
+                    <p>Where beauty meets relaxation</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Hours</h3>
+                    <p>Mon-Fri: 9am - 8pm</p>
+                    <p>Sat: 9am - 6pm</p>
+                    <p>Sun: 10am - 4pm</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>📍 456 Beauty Ave, NYC</p>
+                    <p>📞 (555) 987-6543</p>
+                    <p>✉️ info@glamourstudio.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Glamour Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Gallery filter functionality
+        const filterButtons = document.querySelectorAll('.gallery-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.dataset.category;
+                
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                galleryItems.forEach(item => {
+                    if (category === 'all' || item.dataset.category === category) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

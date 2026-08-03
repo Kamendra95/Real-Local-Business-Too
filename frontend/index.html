@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Business Hub | Premium Business Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0f0c29;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            min-height: 100vh;
+        }
+        
+        /* Professional Admin Button */
+        .admin-btn-container {
+            position: fixed;
+            top: 20px;
+            right: 30px;
+            z-index: 1000;
+        }
+        
+        .admin-login-btn {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(12px);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 10px 24px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: 0.5px;
+        }
+        
+        .admin-login-btn:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* User Info */
+        .user-info {
+            position: fixed;
+            top: 20px;
+            right: 30px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(12px);
+            padding: 8px 20px;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 1000;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .user-name {
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .logout-btn {
+            background: rgba(255,255,255,0.15);
+            color: white;
+            border: none;
+            padding: 6px 16px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .logout-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.02);
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 20px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 2000"><path fill="rgba(255,255,255,0.03)" d="M0,0 L2000,0 L2000,2000 L0,2000 Z M500,500 L1500,500 L1500,1500 L500,1500 Z"/></svg>');
+            background-size: 50px 50px;
+            opacity: 0.5;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 0%, #e0c3fc 50%, #fff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.8);
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            line-height: 1.6;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 40px 24px 60px;
+        }
+        
+        /* Business Grid */
+        .business-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+        }
+        
+        /* Business Card - Professional Design */
+        .business-card {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            overflow: hidden;
+            text-decoration: none;
+            color: #1a1a2e;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: block;
+            cursor: pointer;
+            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .business-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 30px 45px -15px rgba(0,0,0,0.3);
+            background: white;
+        }
+        
+        .business-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            transition: transform 0.5s ease;
+        }
+        
+        .business-card:hover .business-image {
+            transform: scale(1.02);
+        }
+        
+        .business-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+        }
+        
+        .business-content {
+            padding: 28px;
+        }
+        
+        .business-content h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #1a1a2e;
+            letter-spacing: -0.3px;
+        }
+        
+        .business-content p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+        }
+        
+        .btn-visit {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-visit:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(102,126,234,0.4);
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 20px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 20px 40px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .business-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            
+            .container {
+                padding: 20px 16px 40px;
+            }
+            
+            .admin-btn-container {
+                top: 15px;
+                right: 15px;
+            }
+            
+            .admin-login-btn {
+                padding: 6px 16px;
+                font-size: 11px;
+            }
+            
+            .user-info {
+                top: 15px;
+                right: 15px;
+                padding: 5px 12px;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .business-card {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+        
+        .business-card:nth-child(1) { animation-delay: 0.1s; }
+        .business-card:nth-child(2) { animation-delay: 0.2s; }
+        .business-card:nth-child(3) { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <!-- Admin Login Button - Visible when NOT logged in -->
+        <div id="adminLoginContainer" class="admin-btn-container">
+            <a href="/admin/login.html" class="admin-login-btn">
+                👑 Admin Login
+            </a>
+        </div>
+        
+        <!-- User Info - Visible when logged in -->
+        <div id="userInfoContainer" class="user-info" style="display: none;">
+            <span class="user-name" id="userNameDisplay">Admin</span>
+            <button class="logout-btn" id="logoutBtn">Logout</button>
+        </div>
+        
+        <h1>🏪 Local Business Hub</h1>
+        <p class="subtitle">Premium business solutions for Restaurant, Gym & Salon — book services, manage appointments, and grow your business online.</p>
+    </div>
+    
+    <div class="container">
+        <div class="business-grid">
+            <!-- Restaurant Card -->
+            <a href="/restaurant" class="business-card">
+                <div class="business-image" style="background-image: url('/images/Resturent-pic.webp');"></div>
+                <div class="business-content">
+                    <h2>🍽️ Restaurant & Café</h2>
+                    <p>Discover our delicious menu, make reservations, and experience fine dining at its best. Book your table online.</p>
+                    <span class="btn-visit">Explore Restaurant →</span>
+                </div>
+            </a>
+            
+            <!-- Gym Card -->
+            <a href="/gym" class="business-card">
+                <div class="business-image" style="background-image: url('/images/GYM-pic.jpg');"></div>
+                <div class="business-content">
+                    <h2>💪 Gym & Fitness Studio</h2>
+                    <p>Join our fitness community, book classes, and achieve your health goals with expert trainers. Start your journey today.</p>
+                    <span class="btn-visit">Explore Gym →</span>
+                </div>
+            </a>
+            
+            <!-- Salon Card -->
+            <a href="/salon" class="business-card">
+                <div class="business-image" style="background-image: url('/images/Salon-pic.webp');"></div>
+                <div class="business-content">
+                    <h2>💇 Salon & Spa</h2>
+                    <p>Pamper yourself with our premium services, book appointments, and experience luxury treatments. Look your best.</p>
+                    <span class="btn-visit">Explore Salon →</span>
+                </div>
+            </a>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2026 Local Business Solutions | Premium Business Platform</p>
+    </footer>
+
+    <script>
+        // Check if user is logged in
+        const token = localStorage.getItem('adminToken');
+        const user = localStorage.getItem('adminUser');
+        
+        const adminLoginContainer = document.getElementById('adminLoginContainer');
+        const userInfoContainer = document.getElementById('userInfoContainer');
+        const userNameDisplay = document.getElementById('userNameDisplay');
+        const logoutBtn = document.getElementById('logoutBtn');
+        
+        if (token && user) {
+            const userData = JSON.parse(user);
+            adminLoginContainer.style.display = 'none';
+            userInfoContainer.style.display = 'flex';
+            userNameDisplay.textContent = userData.name || 'Admin';
+        } else {
+            adminLoginContainer.style.display = 'block';
+            userInfoContainer.style.display = 'none';
+        }
+        
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', () => {
+                localStorage.removeItem('adminToken');
+                localStorage.removeItem('adminUser');
+                window.location.reload();
+            });
+        }
+    </script>
+</body>
+</html>

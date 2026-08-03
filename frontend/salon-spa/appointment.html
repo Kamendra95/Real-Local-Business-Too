@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment | Glamour Studio</title>
+    <link rel="stylesheet" href="../shared/css/common.css">
+    <link rel="stylesheet" href="../shared/css/responsive.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">💇 Glamour Studio</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="appointment.html" class="active">Appointments</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">☰</div>
+        </div>
+    </nav>
+
+    <section class="appointment-header">
+        <div class="container">
+            <h1>Book Your Appointment</h1>
+            <p>Schedule your pampering session with us</p>
+        </div>
+    </section>
+
+    <section class="appointment-form-section">
+        <div class="container">
+            <div class="appointment-container">
+                <div class="appointment-info">
+                    <h3>Before You Book</h3>
+                    <p>Please arrive 10 minutes before your appointment. We require 24-hour notice for cancellations.</p>
+                    
+                    <h3>Contact Us</h3>
+                    <p>📞 (555) 987-6543</p>
+                    <p>✉️ appointments@glamourstudio.com</p>
+                    
+                    <h3>Location</h3>
+                    <p>456 Beauty Avenue<br>New York, NY 10001</p>
+                    
+                    <h3>Gift Cards</h3>
+                    <p>Looking for the perfect gift? Purchase a Glamour Studio gift card for your loved ones.</p>
+                    <a href="contact.html" class="btn btn-secondary">Inquire Now</a>
+                </div>
+
+                <div class="appointment-form">
+                    <form id="appointmentForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Select Service *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Choose a service</option>
+                                <option value="Haircut & Style">Haircut & Style - $45</option>
+                                <option value="Hair Color">Hair Color - $80</option>
+                                <option value="Balayage">Balayage - $150</option>
+                                <option value="Keratin Treatment">Keratin Treatment - $200</option>
+                                <option value="Swedish Massage">Swedish Massage - $70</option>
+                                <option value="Deep Tissue Massage">Deep Tissue Massage - $85</option>
+                                <option value="Hot Stone Massage">Hot Stone Massage - $95</option>
+                                <option value="Facial">Facial - $65</option>
+                                <option value="Classic Manicure">Classic Manicure - $25</option>
+                                <option value="Gel Manicure">Gel Manicure - $40</option>
+                                <option value="Spa Pedicure">Spa Pedicure - $55</option>
+                                <option value="Bridal Makeup">Bridal Makeup - $150</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">Date *</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="time">Time *</label>
+                                <select id="time" name="time" required>
+                                    <option value="">Select time</option>
+                                    <option value="09:00">9:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="13:00">1:00 PM</option>
+                                    <option value="14:00">2:00 PM</option>
+                                    <option value="15:00">3:00 PM</option>
+                                    <option value="16:00">4:00 PM</option>
+                                    <option value="17:00">5:00 PM</option>
+                                    <option value="18:00">6:00 PM</option>
+                                    <option value="19:00">7:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="stylist">Preferred Stylist (Optional)</label>
+                            <select id="stylist" name="stylist">
+                                <option value="">Any available stylist</option>
+                                <option value="Jessica">Jessica - Hair Specialist</option>
+                                <option value="Maria">Maria - Color Expert</option>
+                                <option value="Lisa">Lisa - Massage Therapist</option>
+                                <option value="Anna">Anna - Nail Artist</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="notes">Special Requests</label>
+                            <textarea id="notes" name="notes" rows="4" placeholder="Any allergies, preferences, or additional notes?"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">Book Appointment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Glamour Studio</h3>
+                    <p>Where beauty meets relaxation</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Hours</h3>
+                    <p>Mon-Fri: 9am - 8pm</p>
+                    <p>Sat: 9am - 6pm</p>
+                    <p>Sun: 10am - 4pm</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>📍 456 Beauty Ave, NYC</p>
+                    <p>📞 (555) 987-6543</p>
+                    <p>✉️ info@glamourstudio.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Glamour Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../shared/js/utils.js"></script>
+    <script src="../shared/js/auth.js"></script>
+    <script src="js/appointment.js"></script>
+</body>
+</html>

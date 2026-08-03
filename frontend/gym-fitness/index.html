@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerFit Elite | Premium Fitness Studio</title>
+    <link rel="stylesheet" href="../shared/css/common.css">
+    <link rel="stylesheet" href="../shared/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Gym Specific Professional Styles */
+        
+        /* Hero Section */
+        .hero-gym {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), 
+                url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            font-family: 'Montserrat', sans-serif;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+        
+        .hero-buttons {
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Features Section */
+        .features-gym {
+            padding: 5rem 0;
+            background: #111;
+            color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: #ff4444;
+            margin: 15px auto 0;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #ff4444;
+        }
+        
+        /* Classes Section */
+        .classes-section {
+            padding: 5rem 0;
+            background: #1a1a1a;
+        }
+        
+        .classes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .class-card {
+            background: #222;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .class-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(255,68,68,0.2);
+        }
+        
+        .class-image {
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .class-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .class-card:hover .class-image img {
+            transform: scale(1.05);
+        }
+        
+        .class-info {
+            padding: 1.5rem;
+        }
+        
+        .class-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #ff4444;
+        }
+        
+        .class-details {
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        .class-details span {
+            display: block;
+            margin: 0.25rem 0;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background: #ff4444;
+            padding: 4rem 0;
+            color: white;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .stat h3 {
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .btn-cta {
+            display: inline-block;
+            padding: 15px 40px;
+            background: white;
+            color: #ff4444;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .classes-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-text">💪 PowerFit Elite</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="classes.html">Classes</a></li>
+                <li><a href="membership.html">Membership</a></li>
+                <li><a href="trainers.html">Trainers</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">☰</div>
+        </div>
+    </nav>
+
+    <section class="hero-gym">
+        <div class="container">
+            <div class="hero-content">
+                <h1>TRANSFORM YOUR LIFE</h1>
+                <p>Join PowerFit Elite and start your fitness journey today</p>
+                <div class="hero-buttons">
+                    <a href="membership.html" class="btn btn-primary">Join Now</a>
+                    <a href="classes.html" class="btn btn-secondary">View Classes</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-gym">
+        <div class="container">
+            <h2 class="section-title">Why Choose Us</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">🏋️</div>
+                    <h3>State-of-the-art Equipment</h3>
+                    <p>Latest machines and free weights</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">👥</div>
+                    <h3>Expert Trainers</h3>
+                    <p>Certified personal trainers</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🧘</div>
+                    <h3>Group Classes</h3>
+                    <p>Yoga, HIIT, Zumba and more</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💪</div>
+                    <h3>24/7 Access</h3>
+                    <p>Workout anytime you want</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="classes-section">
+        <div class="container">
+            <h2 class="section-title">Popular Classes</h2>
+            <div class="classes-grid">
+                <div class="class-card">
+                    <div class="class-image">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600" alt="Yoga">
+                    </div>
+                    <div class="class-info">
+                        <h3>Yoga Flow</h3>
+                        <div class="class-details">
+                            <span>⏰ Mon, Wed, Fri 9am</span>
+                            <span>🎯 All Levels</span>
+                            <span>⏱️ 60 min</span>
+                        </div>
+                        <a href="classes.html" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+                <div class="class-card">
+                    <div class="class-image">
+                        <img src="https://images.unsplash.com/photo-1534258936925-c58bed479fcb?w=600" alt="HIIT">
+                    </div>
+                    <div class="class-info">
+                        <h3>HIIT Training</h3>
+                        <div class="class-details">
+                            <span>⏰ Tue, Thu 6pm</span>
+                            <span>🎯 Intermediate</span>
+                            <span>⏱️ 45 min</span>
+                        </div>
+                        <a href="classes.html" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+                <div class="class-card">
+                    <div class="class-image">
+                        <img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=600" alt="Spin">
+                    </div>
+                    <div class="class-info">
+                        <h3>Spin Class</h3>
+                        <div class="class-details">
+                            <span>⏰ Mon, Wed, Fri 5pm</span>
+                            <span>🎯 All Levels</span>
+                            <span>⏱️ 50 min</span>
+                        </div>
+                        <a href="classes.html" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat">
+                    <h3>500+</h3>
+                    <p>Active Members</p>
+                </div>
+                <div class="stat">
+                    <h3>20+</h3>
+                    <p>Expert Trainers</p>
+                </div>
+                <div class="stat">
+                    <h3>50+</h3>
+                    <p>Weekly Classes</p>
+                </div>
+                <div class="stat">
+                    <h3>10+</h3>
+                    <p>Years Experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Join PowerFit Elite today and get 7 days free trial</p>
+            <a href="membership.html" class="btn-cta">Claim Your Free Trial →</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PowerFit Elite</h3>
+                    <p>Your fitness journey starts here</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Hours</h3>
+                    <p>24/7 - Open All Year</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>📍 456 Fitness Ave, NYC</p>
+                    <p>📞 (555) 987-6543</p>
+                    <p>✉️ info@powerfit.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 PowerFit Elite. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../shared/js/utils.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            if (hamburger) {
+                hamburger.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Gourmet Bistro | Luxury Fine Dining Restaurant</title>
+    <link rel="stylesheet" href="../shared/css/common.css">
+    <link rel="stylesheet" href="../shared/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Restaurant Specific Improved Styles */
+        
+        /* Hero Section - Improved */
+        .hero-restaurant {
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            font-family: 'Poppins', sans-serif;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+        
+        .hero-buttons {
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Specials Section - Improved */
+        .specials {
+            padding: 5rem 0;
+            background: #fff9f5;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
+            font-family: 'Playfair Display', serif;
+            color: #2c1810;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: #d4af7a;
+            margin: 15px auto 0;
+        }
+        
+        .specials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+        
+        .special-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .special-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .special-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .special-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .special-card:hover .special-image img {
+            transform: scale(1.05);
+        }
+        
+        .special-content {
+            padding: 1.8rem;
+        }
+        
+        .special-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #2c1810;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .special-content p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .price {
+            display: inline-block;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #d4af7a;
+        }
+        
+        /* Features Section - Improved */
+        .features-restaurant {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature p {
+            opacity: 0.9;
+        }
+        
+        /* Testimonials Section - Improved */
+        .testimonials {
+            padding: 5rem 0;
+            background: #2c1810;
+            color: white;
+        }
+        
+        .testimonials .section-title {
+            color: white;
+        }
+        
+        .testimonials .section-title:after {
+            background: #d4af7a;
+        }
+        
+        .testimonials-slider {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .testimonial {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial h4 {
+            margin: 0.5rem 0;
+            color: #d4af7a;
+        }
+        
+        .rating {
+            color: #ffc107;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+        
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .btn-primary {
+            background: #d4af7a;
+            color: #2c1810;
+        }
+        
+        .btn-primary:hover {
+            background: #c49a6c;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid #d4af7a;
+        }
+        
+        .btn-secondary:hover {
+            background: #d4af7a;
+            color: #2c1810;
+            transform: translateY(-2px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .specials-grid,
+            .features-grid,
+            .testimonials-slider {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-text">🍽️ The Gourmet Bistro</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="reservation.html">Reservations</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">☰</div>
+        </div>
+    </nav>
+
+    <section class="hero-restaurant">
+        <div class="hero-overlay">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Welcome to The Gourmet Bistro</h1>
+                    <p>Experience culinary excellence in every bite</p>
+                    <div class="hero-buttons">
+                        <a href="menu.html" class="btn btn-primary">View Menu</a>
+                        <a href="reservation.html" class="btn btn-secondary">Book a Table</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="specials">
+        <div class="container">
+            <h2 class="section-title">Today's Specials</h2>
+            <div class="specials-grid">
+                <div class="special-card">
+                    <div class="special-image">
+                        <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=600" alt="Grilled Salmon">
+                    </div>
+                    <div class="special-content">
+                        <h3>Grilled Salmon</h3>
+                        <p>Fresh Atlantic salmon with lemon butter sauce, served with seasonal vegetables</p>
+                        <span class="price">$24.99</span>
+                    </div>
+                </div>
+                <div class="special-card">
+                    <div class="special-image">
+                        <img src="https://images.unsplash.com/photo-1558030006-450675393462?w=600" alt="Beef Tenderloin">
+                    </div>
+                    <div class="special-content">
+                        <h3>Beef Tenderloin</h3>
+                        <p>8oz prime tenderloin grilled to perfection with red wine reduction</p>
+                        <span class="price">$32.99</span>
+                    </div>
+                </div>
+                <div class="special-card">
+                    <div class="special-image">
+                        <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=600" alt="Tiramisu">
+                    </div>
+                    <div class="special-content">
+                        <h3>Tiramisu</h3>
+                        <p>Classic Italian dessert with espresso-soaked ladyfingers and mascarpone</p>
+                        <span class="price">$8.99</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-restaurant">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">🌿</div>
+                    <h3>Fresh Ingredients</h3>
+                    <p>Locally sourced, seasonal produce</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">👨‍🍳</div>
+                    <h3>Expert Chefs</h3>
+                    <p>Michelin-star trained culinary team</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🍷</div>
+                    <h3>Wine Selection</h3>
+                    <p>Curated wine list from around the world</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">✨</div>
+                    <h3>Ambiance</h3>
+                    <p>Elegant dining experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Guests Say</h2>
+            <div class="testimonials-slider">
+                <div class="testimonial">
+                    <p>"Absolutely amazing dining experience! The food was exceptional and service was impeccable."</p>
+                    <h4>- Sarah Johnson</h4>
+                    <div class="rating">★★★★★</div>
+                </div>
+                <div class="testimonial">
+                    <p>"Best restaurant in town! The ambiance is perfect for a romantic dinner."</p>
+                    <h4>- Michael Chen</h4>
+                    <div class="rating">★★★★★</div>
+                </div>
+                <div class="testimonial">
+                    <p>"The flavors are incredible. Will definitely come back!"</p>
+                    <h4>- Emily Rodriguez</h4>
+                    <div class="rating">★★★★★</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>The Gourmet Bistro</h3>
+                    <p>Fine dining at its best</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Hours</h3>
+                    <p>Mon-Thu: 11am - 10pm</p>
+                    <p>Fri-Sat: 11am - 11pm</p>
+                    <p>Sun: 10am - 9pm</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>📍 123 Gourmet Street, NYC</p>
+                    <p>📞 (555) 123-4567</p>
+                    <p>✉️ info@gourmetbistro.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Gourmet Bistro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../shared/js/utils.js"></script>
+    <script>
+        // Hamburger menu toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (hamburger) {
+                hamburger.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

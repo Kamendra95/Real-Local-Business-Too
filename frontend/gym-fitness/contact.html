@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | PowerFit Gym</title>
+    <link rel="stylesheet" href="../shared/css/common.css">
+    <link rel="stylesheet" href="../shared/css/responsive.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">💪 PowerFit Gym</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="classes.html">Classes</a></li>
+                <li><a href="membership.html">Membership</a></li>
+                <li><a href="trainers.html">Trainers</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="hamburger">☰</div>
+        </div>
+    </nav>
+
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Get In Touch</h1>
+            <p>We're here to help you achieve your fitness goals</p>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <h3>📍 Location</h3>
+                        <p>456 Fitness Avenue<br>New York, NY 10001</p>
+                        <a href="https://maps.google.com/?q=456+Fitness+Ave+New+York" target="_blank" style="color: #ff6b6b;">Get Directions →</a>
+                    </div>
+                    <div class="info-card">
+                        <h3>📞 Phone</h3>
+                        <p>(555) 987-6543</p>
+                        <p>(555) 987-6544 (Membership)</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>✉️ Email</h3>
+                        <p>info@powerfit.com</p>
+                        <p>membership@powerfit.com</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>⏰ Hours</h3>
+                        <p>24/7 - Open 365 days</p>
+                        <p>Staffed hours: 6am - 10pm</p>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="Phone Number">
+                        </div>
+                        <div class="form-group">
+                            <select name="subject">
+                                <option value="">Select Subject</option>
+                                <option value="membership">Membership Inquiry</option>
+                                <option value="classes">Class Information</option>
+                                <option value="personal training">Personal Training</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                    <div id="responseMessage" style="margin-top: 1rem; text-align: center;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2>📍 Find Us on Map</h2>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps?q=28.6139,77.2090&output=embed" 
+                    width="100%" 
+                    height="400" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PowerFit Gym</h3>
+                    <p>Your fitness journey starts here</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Hours</h3>
+                    <p>24/7 - Open All Year</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>📍 456 Fitness Ave, NYC</p>
+                    <p>📞 (555) 987-6543</p>
+                    <p>✉️ info@powerfit.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 PowerFit Gym. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../shared/js/utils.js"></script>
+    <script>
+        // Contact Form Submit
+        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = {
+                businessType: 'gym',
+                name: document.querySelector('input[name="name"]').value,
+                email: document.querySelector('input[name="email"]').value,
+                phone: document.querySelector('input[name="phone"]').value,
+                subject: document.querySelector('select[name="subject"]').value,
+                message: document.querySelector('textarea[name="message"]').value
+            };
+            
+            const responseDiv = document.getElementById('responseMessage');
+            responseDiv.innerHTML = '<span style="color:blue;">⏳ Sending...</span>';
+            
+            try {
+                const response = await fetch('http://localhost:5000/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    responseDiv.innerHTML = '<span style="color:green;">✅ Message sent successfully! Our team will contact you soon.</span>';
+                    document.getElementById('contactForm').reset();
+                    setTimeout(() => responseDiv.innerHTML = '', 5000);
+                } else {
+                    responseDiv.innerHTML = '<span style="color:red;">❌ Failed to send message. Please try again.</span>';
+                }
+            } catch (error) {
+                responseDiv.innerHTML = '<span style="color:red;">❌ Network error. Please try again.</span>';
+            }
+        });
+    </script>
+</body>
+</html>

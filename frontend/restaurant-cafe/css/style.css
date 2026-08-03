@@ -1,0 +1,282 @@
+/* Restaurant Specific Styles */
+.hero-restaurant {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-overlay {
+    width: 100%;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.specials {
+    padding: 4rem 0;
+    background: #f9f9f9;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.specials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.special-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.special-card:hover {
+    transform: translateY(-5px);
+}
+
+.special-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.special-content {
+    padding: 1.5rem;
+}
+
+.special-content h3 {
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #ff6b6b;
+}
+
+.features-restaurant {
+    padding: 4rem 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.testimonials {
+    background: #f9f9f9;
+    padding: 4rem 0;
+}
+
+.testimonial {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.testimonial p {
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+.rating {
+    color: #ffc107;
+    margin-top: 0.5rem;
+}
+
+/* Menu Page */
+.menu-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.menu-categories {
+    padding: 4rem 0;
+}
+
+.category-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 0.8rem 1.5rem;
+    background: none;
+    border: 2px solid #ff6b6b;
+    color: #ff6b6b;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+    background: #ff6b6b;
+    color: white;
+}
+
+.menu-category {
+    display: none;
+}
+
+.menu-category.active {
+    display: block;
+}
+
+.menu-items {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.menu-item {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.menu-item:hover {
+    background: #f9f9f9;
+}
+
+.item-info h3 {
+    margin-bottom: 0.5rem;
+}
+
+.item-info .price {
+    float: right;
+    margin-left: 1rem;
+}
+
+/* Reservation Page */
+.reservation-hero,
+.about-hero,
+.contact-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.reservation-form-section,
+.about-content,
+.contact-section {
+    padding: 4rem 0;
+}
+
+.reservation-container,
+.about-grid,
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+}
+
+.reservation-info,
+.contact-info {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.reservation-info h3,
+.contact-info h3 {
+    margin: 1rem 0 0.5rem;
+}
+
+.reservation-info h3:first-child,
+.contact-info h3:first-child {
+    margin-top: 0;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+.about-grid {
+    align-items: center;
+}
+
+.about-image img,
+.chef-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.chef-section {
+    background: #f9f9f9;
+    padding: 4rem 0;
+}
+
+.chef-profile {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.info-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.info-card h3 {
+    margin-bottom: 0.5rem;
+    color: #ff6b6b;
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .reservation-container,
+    .about-grid,
+    .chef-profile,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Glamour Studio</title>
+    <link rel="stylesheet" href="../shared/css/common.css">
+    <link rel="stylesheet" href="../shared/css/responsive.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">💇 Glamour Studio</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="appointment.html">Appointments</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="hamburger">☰</div>
+        </div>
+    </nav>
+
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Get In Touch</h1>
+            <p>We'd love to hear from you</p>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <h3>📍 Location</h3>
+                        <p>456 Beauty Avenue<br>New York, NY 10001</p>
+                        <a href="https://maps.google.com/?q=456+Beauty+Ave+New+York" target="_blank" style="color: #d4af7a;">Get Directions →</a>
+                    </div>
+                    <div class="info-card">
+                        <h3>📞 Phone</h3>
+                        <p>(555) 987-6543</p>
+                        <p>(555) 987-6544 (Appointments)</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>✉️ Email</h3>
+                        <p>info@glamourstudio.com</p>
+                        <p>appointments@glamourstudio.com</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>⏰ Hours</h3>
+                        <p>Monday - Friday: 9am - 8pm</p>
+                        <p>Saturday: 9am - 6pm</p>
+                        <p>Sunday: 10am - 4pm</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>📱 Follow Us</h3>
+                        <p>Instagram: @glamourstudio</p>
+                        <p>Facebook: Glamour Studio</p>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="Phone Number">
+                        </div>
+                        <div class="form-group">
+                            <select name="subject">
+                                <option value="">Select Subject</option>
+                                <option value="appointment">Appointment Inquiry</option>
+                                <option value="service">Service Information</option>
+                                <option value="gift card">Gift Card</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                    <div id="responseMessage" style="margin-top: 1rem; text-align: center;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2>📍 Find Us on Map</h2>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-74.00369368400567!3d40.71312937933097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a316c6a2b4f%3A0xc9f0a5f5e5b5f5e5!2s456%20Beauty%20Ave%2C%20New%20York%2C%20NY%2010001!5e0!3m2!1sen!2sus!4v1641234567890!5m2!1sen!2sus" 
+                    width="100%" 
+                    height="400" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Glamour Studio</h3>
+                    <p>Where beauty meets relaxation</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Hours</h3>
+                    <p>Mon-Fri: 9am - 8pm</p>
+                    <p>Sat: 9am - 6pm</p>
+                    <p>Sun: 10am - 4pm</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>📍 456 Beauty Ave, NYC</p>
+                    <p>📞 (555) 987-6543</p>
+                    <p>✉️ info@glamourstudio.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Glamour Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../shared/js/utils.js"></script>
+    <script>
+        // Contact Form Submit
+        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = {
+                businessType: 'salon',
+                name: document.querySelector('input[name="name"]').value,
+                email: document.querySelector('input[name="email"]').value,
+                phone: document.querySelector('input[name="phone"]').value,
+                subject: document.querySelector('select[name="subject"]').value,
+                message: document.querySelector('textarea[name="message"]').value
+            };
+            
+            const responseDiv = document.getElementById('responseMessage');
+            responseDiv.innerHTML = '<span style="color:blue;">⏳ Sending...</span>';
+            
+            try {
+                const response = await fetch('http://localhost:5000/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    responseDiv.innerHTML = '<span style="color:green;">✅ Message sent successfully! We\'ll get back to you within 24 hours.</span>';
+                    document.getElementById('contactForm').reset();
+                    setTimeout(() => responseDiv.innerHTML = '', 5000);
+                } else {
+                    responseDiv.innerHTML = '<span style="color:red;">❌ Failed to send message. Please try again.</span>';
+                }
+            } catch (error) {
+                responseDiv.innerHTML = '<span style="color:red;">❌ Network error. Please try again.</span>';
+            }
+        });
+    </script>
+</body>
+</html>
